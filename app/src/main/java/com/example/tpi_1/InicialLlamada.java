@@ -15,7 +15,7 @@ public class InicialLlamada extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_inicial_llamada);
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:911"));
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:1154008019"));
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
                 && checkSelfPermission(Manifest.permission.CALL_PHONE)

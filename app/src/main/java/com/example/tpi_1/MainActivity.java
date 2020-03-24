@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     private USBconectado usb;
+    private USBconectado usb2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +28,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         usb = new USBconectado();
-        //registerReceiver(usb, new IntentFilter("android.hardware.usb.action.USB_STATE"));
-        registerReceiver(usb, new IntentFilter("android.provider.Telephony.SMS_RECEIVED"));
+        usb2 = new USBconectado();
+        registerReceiver(usb, new IntentFilter("android.hardware.usb.action.USB_STATE"));
+        registerReceiver(usb2, new IntentFilter("android.provider.Telephony.SMS_RECEIVED"));
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         unregisterReceiver(usb);
+        unregisterReceiver(usb2);
     }
 }
